@@ -16,7 +16,7 @@
  * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* * ***************************Includes********************************* */
+/* ***************************Includes********************************* */
 require_once __DIR__  . '/../../../../core/php/core.inc.php';
 include_once __DIR__.'/HCRoom.class.php';
 include_once __DIR__.'/HCDevice.class.php';

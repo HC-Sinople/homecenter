@@ -15,14 +15,14 @@
                     $room = new FibaroRoom( $JsonRoom );
                     self::$GLOBALS_rooms[$_roomId] = $room;
                 }else{
-                    log::add('homecenter', 'debug', 'Fibaro pièce '. $_roomId .': Inconnue' );
+                    log::add('homecenter3', 'debug', 'Fibaro pièce '. $_roomId .': Inconnue' );
                 }
 
             }else{
                 $room = self::$GLOBALS_rooms[$_roomId];
             }
 
-            log::add('homecenter', 'debug', 'Fibaro Room:'. json_encode( utils::o2a( $room ) ) );
+            log::add('homecenter3', 'debug', 'Fibaro Room:'. json_encode( utils::o2a( $room ) ) );
             return $room;
 
         }

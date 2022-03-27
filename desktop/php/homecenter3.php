@@ -3,7 +3,7 @@ if (!isConnect('admin')) {
 	throw new Exception('{{401 - Accès non autorisé}}');
 }
   
-  $plugin = plugin::byId('homecenter');
+  $plugin = plugin::byId('homecenter3');
   sendVarToJS('eqType', $plugin->getId()); 
   $eqLogics = eqLogic::byType($plugin->getId());
   $allObject = jeeObject::all(true);

@@ -8,7 +8,7 @@ $('.addDevice').on('click', function (event) {
 
     $.ajax({
       type: 'POST',
-      url: 'plugins/homecenter/core/ajax/homecenter.ajax.php',
+      url: 'plugins/homecenter3/core/ajax/homecenter3.ajax.php',
       data: {
           action: 'DefineEqLogic',
           fibaroId : fibaroId,
@@ -54,7 +54,7 @@ $('.addDevice').on('click', function (event) {
             $(this).removeClass("cursor").removeClass("addDevice");
             $(this).attr('data-fibaro_id', null);    
            
-            loadPage('index.php?v=d&m=homecenter&p=homecenter' + '&saveSuccessFull=1')
+            loadPage('index.php?v=d&m=homecenter3&p=homecenter3' + '&saveSuccessFull=1')
             $('#div_alert').showAlert({message: '{{Sauvegarde effectuée avec succès}}', level: 'success'})            
 
           }
@@ -82,7 +82,7 @@ $('#bt_save').on('click', function (event) {
 
     $.ajax({
       type: 'POST',
-      url: 'plugins/homecenter/core/ajax/homecenter.ajax.php',
+      url: 'plugins/homecenter3/core/ajax/homecenter3.ajax.php',
       data: {
           action: 'DefineEqLogic',
           fibaroIds : fibaroIds,
@@ -107,7 +107,7 @@ $('#bt_save').on('click', function (event) {
             },
             success: function (_data) {
               console.log(_data);
-              //loadPage('index.php?v=d&m=homecenter&p=homecenter' + '&saveSuccessFull=1')
+              //loadPage('index.php?v=d&m=homecenter3&p=homecenter3' + '&saveSuccessFull=1')
               //$('#div_alert').showAlert({message: '{{Sauvegarde effectuée avec succès}}', level: 'success'})            
             }
         

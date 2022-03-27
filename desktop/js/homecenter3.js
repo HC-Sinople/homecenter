@@ -27,7 +27,7 @@ $.hideLoading();
 
 $('#bt_add_all').on('click', function () {
     $('#md_modal').dialog({title: "{{Ajout en masse}}"});
-    $('#md_modal').load('index.php?v=d&plugin=homecenter&modal=HCState').dialog('open');
+    $('#md_modal').load('index.php?v=d&plugin=homecenter3&modal=HCState').dialog('open');
  });
 
 
@@ -35,7 +35,7 @@ $('#bt_maj_scene').on('click', function () {
 
   $.ajax({
     type: 'POST',
-    url: 'plugins/homecenter/core/ajax/homecenter.ajax.php',
+    url: 'plugins/homecenter3/core/ajax/homecenter3.ajax.php',
     data: {
         action: 'UpdateScene',
     },
@@ -179,7 +179,7 @@ $(".objectDisplayCard").on('click', function () {
   
   var roomId = $(this).attr('data-object_id');
   console.log("rommId="+roomId);
-  window.location.href = "index.php?v=d&m=homecenter&p=HCRoom&id="+roomId;
+  window.location.href = "index.php?v=d&m=homecenter3&p=HCRoom&id="+roomId;
 });
 
 
@@ -187,8 +187,8 @@ $(".objectDisplayCard").on('click', function () {
 
 $('#bt_add_test').on('click', function () {
 
-  $('#md_modal').dialog({title: "{{Code homecenter}}"});
-  $('#md_modal').load('index.php?v=d&plugin=homecenter&modal=HCCode').dialog('open');
+  $('#md_modal').dialog({title: "{{Code homecenter3}}"});
+  $('#md_modal').load('index.php?v=d&plugin=homecenter3&modal=HCCode').dialog('open');
 
 
 });

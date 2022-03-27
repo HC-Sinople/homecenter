@@ -35,7 +35,7 @@
         ?>
 
         <ul class="nav nav-tabs" role="tablist">
-            <li role="tab"               ><a href="index.php?v=d&m=homecenter&p=homecenter"><i class="fas fa-arrow-circle-left"></i></a></li>
+            <li role="tab"               ><a href="index.php?v=d&m=homecenter3&p=homecenter3"><i class="fas fa-arrow-circle-left"></i></a></li>
             <li role="tab" class="active"><a href="#objecttab"><i class="fas fa-home"></i> {{pièce}}</a></li>
         </ul>
 
@@ -52,4 +52,4 @@
 
 
 <?php include_file('core', 'plugin.template', 'js'); ?>
-<?php include_file('desktop', 'HCRoom', 'js', 'homecenter');?>
+<?php include_file('desktop', 'HCRoom', 'js', 'homecenter3');?>

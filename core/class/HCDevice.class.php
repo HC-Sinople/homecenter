@@ -61,15 +61,15 @@
                     $device = self::createDevice( $JsonDetail );
                     self::$GLOBALS_devices[$_deviceId] = $device;
                 }else{
-                    log::add('homecenter', 'debug', 'Fibaro Device '. $_deviceId .': Inconnu' );
+                    log::add('homecenter3', 'debug', 'Fibaro Device '. $_deviceId .': Inconnu' );
                 }
 
             }else{
-                log::add('homecenter', 'debug', 'Fibaro Device: GET FROM MEMORY' );
+                log::add('homecenter3', 'debug', 'Fibaro Device: GET FROM MEMORY' );
                 $device = self::$GLOBALS_devices[$_deviceId];
             }
 
-            log::add('homecenter', 'debug', 'Fibaro Device:'. json_encode( utils::o2a( $device ) ) );
+            log::add('homecenter3', 'debug', 'Fibaro Device:'. json_encode( utils::o2a( $device ) ) );
             return $device;
             
         }
@@ -299,7 +299,7 @@
                         
                     default :
                         $subType = 'string';
-                        log::add('homecenter', 'debug', 'Type inconnu : '. $property->type );
+                        log::add('homecenter3', 'debug', 'Type inconnu : '. $property->type );
                         break;
                 }
 
@@ -405,7 +405,7 @@
         }
         
         public function getIcone(){
-            $icone = 'plugins/homecenter/desktop/icones/homecenter_icon.png';
+            $icone = 'plugins/homecenter3/desktop/icones/homecenter3_icon.png';
             return $icone;            
         }     
         
@@ -491,7 +491,7 @@
     class FibaroBinarySwitch extends FibaroSwitch{
 
         public  function getIcone(){
-            $icone = parent::getIcone() ?: 'plugins/homecenter/desktop/icones/switch.png';
+            $icone = parent::getIcone() ?: 'plugins/homecenter3/desktop/icones/switch.png';
             return $icone;                 
         }  
 
@@ -510,7 +510,7 @@
     class FibaroPlug extends FibaroSwitch{
 
         public  function getIcone(){
-            $icone = parent::getIcone() ?: 'plugins/homecenter/desktop/icones/wallplug.png';
+            $icone = parent::getIcone() ?: 'plugins/homecenter3/desktop/icones/wallplug.png';
             return $icone;            
         }  
 
@@ -558,7 +558,7 @@
         
         public  function getIcone(){
             $fibaroServ = FibaroServer::getInstance();
-            return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter/desktop/icones/store.png';;         
+            return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter3/desktop/icones/store.png';;         
         }     
         
 
@@ -641,7 +641,7 @@
         
         public function getIcone(){
             $fibaroServ = FibaroServer::getInstance();
-            return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter/desktop/icones/Tmp.png';
+            return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter3/desktop/icones/Tmp.png';
         } 
         
         public function getTypeName() {
@@ -797,9 +797,9 @@
         public function getIcone(){
             $fibaroServ = FibaroServer::getInstance();
             if( $this->getType() == self::FIBARO_TYPE['sismomètre'] ) {
-                return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter/desktop/icones/seismometer.png';
+                return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter3/desktop/icones/seismometer.png';
             }else{
-                return $fibaroServ->getIconeState( $this->getIconeId() ) ?: 'plugins/homecenter/desktop/icones/Tmp.png';
+                return $fibaroServ->getIconeState( $this->getIconeId() ) ?: 'plugins/homecenter3/desktop/icones/Tmp.png';
             }
             
         }  
@@ -867,7 +867,7 @@
         
         public function getIcone(){
             $fibaroServ = FibaroServer::getInstance();
-            return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter/desktop/icones/homecenter_icon.png';
+            return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter3/desktop/icones/homecenter3_icon.png';
         }         
        
     }
@@ -994,7 +994,7 @@
 
         public function getIcone(){
             $fibaroServ = FibaroServer::getInstance();
-            return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter/desktop/icones/lock.png';
+            return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter3/desktop/icones/lock.png';
         }         
     }    
 ?>

@@ -98,4 +98,4 @@ if (!isConnect('admin')) {
     </div>
 </div>
 
-<?php include_file('desktop', 'HCCode', 'js', 'homecenter');?>
+<?php include_file('desktop', 'HCCode', 'js', 'homecenter3');?>

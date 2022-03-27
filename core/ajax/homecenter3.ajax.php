@@ -20,7 +20,7 @@
 
 	try {	
 		require_once __DIR__.'/../../../../core/php/core.inc.php';
-		require_once __DIR__.'/../class/homecenter.class.php';
+		require_once __DIR__.'/../class/homecenter3.class.php';
 
 		include_file('core', 'authentification', 'php');
 		if (!isConnect('admin')) {
@@ -72,7 +72,7 @@
 			$n = 0;
 
 			foreach( $fibaroIds as $fibaroId ){
-				$eqLogic = homecenter::defineEqLogic($fibaroId);
+				$eqLogic = homecenter3::defineEqLogic($fibaroId);
 				$eqLogics[$n] = utils::o2a($eqLogic);
 				$n++;
 			}
@@ -85,7 +85,7 @@
 			$error = "";
 			
 			// Récupération de l'ensemble des équipements Jeedom 
-			$plugin = plugin::byId('homecenter');
+			$plugin = plugin::byId('homecenter3');
 			$eqLogics = eqLogic::byType($plugin->getId());
 			
 			// Récupération de l'ensemble des équipements Fibaro
@@ -148,7 +148,7 @@
 			ajax::success(json_encode(array('status' => $status, 'error' => $error, 'result' => $result )));			
 		}
 
-		$error = "La méthode '".init('action')."' n'existe pas dans 'homecenter.ajax.php'";
+		$error = "La méthode '".init('action')."' n'existe pas dans 'homecenter3.ajax.php'";
 		throw new Exception($error, -1);
 	} catch (Exception $e) {
 		/* Catch exeption */

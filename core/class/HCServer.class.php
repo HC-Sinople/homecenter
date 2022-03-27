@@ -33,14 +33,14 @@ class FibaroServer {
   private function __construct() {
 
     //recuperation de IP, Login, Mdp  (parametre Global de module)
-    $userId = config::byKey('fibaroLogin', 'homecenter');
-    $userPassword = config::byKey('fibaroMDP', 'homecenter');
-    $serverIP = config::byKey('fibaroIP', 'homecenter');
+    $userId = config::byKey('fibaroLogin', 'homecenter3');
+    $userPassword = config::byKey('fibaroMDP', 'homecenter3');
+    $serverIP = config::byKey('fibaroIP', 'homecenter3');
 
     // On enregistre les données de connextion 
     $this->urlServeur = 'http://'.$serverIP;
     $this->basicAuth = base64_encode( $userId. ':' .$userPassword); 
-    log::add('homecenter', 'debug', 'Basic Authorisation:'.$this->basicAuth);
+    log::add('homecenter3', 'debug', 'Basic Authorisation:'.$this->basicAuth);
     
     if( !$this->connected ){
       $this->connected = true;
@@ -72,7 +72,7 @@ class FibaroServer {
       $request = $this->urlServeur.$_APIName;
       $body = ($_body) ?: '{}';
 
-      log::add('homecenter', 'debug', 'Requete:'.$request . ' / Body : ' .$body );
+      log::add('homecenter3', 'debug', 'Requete:'.$request . ' / Body : ' .$body );
       $curl = curl_init();
       
       curl_setopt_array($curl, array(
@@ -93,7 +93,7 @@ class FibaroServer {
       ));
 
       $response = curl_exec($curl);
-      log::add('homecenter', 'debug', 'Résultat requête:'.$response);
+      log::add('homecenter3', 'debug', 'Résultat requête:'.$response);
 
       curl_close($curl);
 
@@ -132,7 +132,7 @@ class FibaroServer {
           }
 
           $fibDevice = FibaroDevice::getFromJson($jsonDeviceD, $jsonDeviceI);
-          log::add('homecenter', 'debug', 'Devices:'.$fibDevice->getId() .' / ' .$fibDevice->getName());
+          log::add('homecenter3', 'debug', 'Devices:'.$fibDevice->getId() .' / ' .$fibDevice->getName());
           $DeviceArray[$n] = $fibDevice;            
         
         }
@@ -148,7 +148,7 @@ class FibaroServer {
         if( $jsonDeviceD->roomID != '0' ){
 
           $fibDevice = FibaroDevice::getFromJson( $jsonDeviceD );
-          log::add('homecenter', 'debug', 'Devices:'.$fibDevice->getId() .' / ' .$fibDevice->getName());
+          log::add('homecenter3', 'debug', 'Devices:'.$fibDevice->getId() .' / ' .$fibDevice->getName());
           $DeviceArray[$n] = $fibDevice;            
         
         }
@@ -197,7 +197,7 @@ class FibaroServer {
     foreach($json_data as $jsonRoom){
       $n++;
       $fibRoom = new FibaroRoom($jsonRoom);
-      log::add('homecenter', 'debug', 'pièce:'.$fibRoom->getId() .' / ' .$fibRoom->getName());
+      log::add('homecenter3', 'debug', 'pièce:'.$fibRoom->getId() .' / ' .$fibRoom->getName());
       $RoomArray[$n] = $fibRoom;
     }
     
@@ -227,7 +227,7 @@ class FibaroServer {
   public function changeScene( $_contend ){
     
     // Récupération du numéro de scène 
-		$sceneId = config::byKey('fibaroScene', 'homecenter');
+		$sceneId = config::byKey('fibaroScene', 'homecenter3');
 
     // Controle si la scène existe
     if($sceneId) $jsonScene = $this->executeRequest( $this::API_NAME['scene'] . '/' . $sceneId );
@@ -254,7 +254,7 @@ class FibaroServer {
       // Modification de la scène
       $request =  $this::API_NAME['scene'] . '/' . $sceneId;
       $json_result = $this->executeRequest( $request, 'PUT', $jsonBodySend );
-      log::add('homecenter', 'debug', 'ERROR:'.$json_result->type ); 
+      log::add('homecenter3', 'debug', 'ERROR:'.$json_result->type ); 
       if( !$json_result->type ) {
         return true;
       }else{
@@ -267,7 +267,7 @@ class FibaroServer {
       $json_result = $this->executeRequest( $request, 'POST', $jsonBodySend );
       
       if( $json_result->id ){
-        config::save('fibaroScene', $json_result->id , 'homecenter');
+        config::save('fibaroScene', $json_result->id , 'homecenter3');
         return true;
       }else{
         return false;

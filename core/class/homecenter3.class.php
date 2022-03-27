@@ -25,7 +25,7 @@ include_once __DIR__.'/HCServer.class.php';
 
 
 
-class homecenter extends eqLogic {
+class homecenter3 extends eqLogic {
  
   public static function health()
   {
@@ -56,7 +56,7 @@ class homecenter extends eqLogic {
 
 
       // Scène de synchonisation 
-      $sceneId = config::byKey('fibaroScene', 'homecenter');
+      $sceneId = config::byKey('fibaroScene', 'homecenter3');
       if($sceneId){
         $state = true;
         $result = 'OK - Scène ' . $sceneId;
@@ -77,19 +77,19 @@ class homecenter extends eqLogic {
 
   public static function cronHourly() {
 
-    log::add('homecenter', 'cron', 'Exécution du CRON : ' . date("F j, Y, g:i a") );
+    log::add('homecenter3', 'cron', 'Exécution du CRON : ' . date("F j, Y, g:i a") );
 
     // Suppression des messages lié au plugin
-    message::removeAll('homecenter');
+    message::removeAll('homecenter3');
 
     $fibaroServ = FibaroServer::getInstance();
     if( !$fibaroServ->isConnected() ){
-      message::add( 'homecenter', 'Connection perdu avec la box FIBARO' );
-      log::add('homecenter', 'cron', 'Perte de connection à la box FIBARO' );
+      message::add( 'homecenter3', 'Connection perdu avec la box FIBARO' );
+      log::add('homecenter3', 'cron', 'Perte de connection à la box FIBARO' );
 
     }else{
       // Controle sur les équipement morts 
-      $plugin = plugin::byId('homecenter');
+      $plugin = plugin::byId('homecenter3');
       $eqLogics = eqLogic::byType($plugin->getId());
 
       // Mise en méomire des équipements Fibaro
@@ -99,8 +99,8 @@ class homecenter extends eqLogic {
         $fibaroId = $eqLogic->getConfiguration("fibaroIdModule");
         $fibaroDevice = FibaroDevice::getFromId($fibaroId);
         if( !isset( $fibaroDevice ) ) { 
-          message::add( 'homecenter', 'Connection perdue entre l équipement ' . $eqLogic->getId() . ' / ' . $eqLogic->getName() . ' et la box FIBARO ' );
-          log::add('homecenter', 'cron', 'Perte de connection le device ' . $eqLogic->getId() . ' / ' . $eqLogic->getName() );
+          message::add( 'homecenter3', 'Connection perdue entre l équipement ' . $eqLogic->getId() . ' / ' . $eqLogic->getName() . ' et la box FIBARO ' );
+          log::add('homecenter3', 'cron', 'Perte de connection le device ' . $eqLogic->getId() . ' / ' . $eqLogic->getName() );
         }
       }
 
@@ -116,9 +116,9 @@ class homecenter extends eqLogic {
     $fibaroDevice = FibaroDevice::getFromId($_fibaroId);
     if( !isset( $fibaroDevice ) ) return;
 
-    $eqLogic = new homecenter();
+    $eqLogic = new homecenter3();
     $eqLogic->setName($fibaroDevice->getName());
-    $eqLogic->setEqType_name('homecenter');
+    $eqLogic->setEqType_name('homecenter3');
     $eqLogic->setConfiguration('fibaroIdModule', $_fibaroId);
 
     if( !$fibaroDevice->isDead() ) $eqLogic->setIsEnable(1);
@@ -171,10 +171,10 @@ class homecenter extends eqLogic {
     if( $fibaroDevice ){
       $icone = $fibaroDevice->getIcone();
     }else{
-      $icone = 'homecenter_icon.png';
+      $icone = 'homecenter3_icon.png';
     }
     
-    log::add('homecenter', 'debug', 'Fibaro icone:'. $icone );
+    log::add('homecenter3', 'debug', 'Fibaro icone:'. $icone );
     $this->setConfiguration('icone' , $icone);
     
   }
@@ -185,9 +185,9 @@ class homecenter extends eqLogic {
     if( isset( $fibaroDevice ) ){
       $icone = $fibaroDevice->getIcone();
     }else{
-      $icone = "plugins/homecenter/desktop/icones/unknown.png";
+      $icone = "plugins/homecenter3/desktop/icones/unknown.png";
     }
-    log::add('homecenter', 'debug', 'Fibaro icone:'.$icone );
+    log::add('homecenter3', 'debug', 'Fibaro icone:'.$icone );
     return $icone;
   }
 
@@ -211,25 +211,25 @@ class homecenter extends eqLogic {
         $command = $this->getCmd( null, $action['id'] );
 
         if (!is_object($command)) {  
-          $command = new homecenterCmd();
+          $command = new homecenter3Cmd();
           $command->setName(__( $action['id'], __FILE__)); 
         }
 
-        log::add('homecenter', 'debug', 'Fibaro Action: Name -> '. json_encode( $action ) );
+        log::add('homecenter3', 'debug', 'Fibaro Action: Name -> '. json_encode( $action ) );
 
         if( $action['type']  == 'info' ){
           $template = $fibaroDevice->getTemplate( $action['id'] );
           if($template){
             $command->setTemplate('dashboard', $template );
             $command->setTemplate('mobile', $template );
-            log::add('homecenter', 'debug', 'Fibaro Action: Template -> '. $template );
+            log::add('homecenter3', 'debug', 'Fibaro Action: Template -> '. $template );
           }
         }
 
         $unit = $action['unite'];
 
         $idRefValue = $fibaroDevice->getRefVal( $action['id'] );
-        log::add('homecenter', 'debug', 'Fibaro Action: Value de référence -> '. $idRefValue );
+        log::add('homecenter3', 'debug', 'Fibaro Action: Value de référence -> '. $idRefValue );
         
         if($idRefValue){
           $cmdRef = $this->getCmd( 'info', $idRefValue ) ;   
@@ -251,7 +251,7 @@ class homecenter extends eqLogic {
         if( $unit ) $command->setUnite( $unit );
 
         $genericType = $fibaroDevice->getGenericType( $action['id'] ); 
-        log::add('homecenter', 'debug', 'Fibaro Action: Generic Type -> '. $genericType );
+        log::add('homecenter3', 'debug', 'Fibaro Action: Generic Type -> '. $genericType );
         if( $genericType ) $command->setDisplay('generic_type', $genericType);
 
         // Exception sur les détecteur d'ouverture
@@ -260,7 +260,7 @@ class homecenter extends eqLogic {
 
         // Gestion des liste de valeur
         if( ( isset( $configList ) ) ){       
-          log::add('homecenter', 'debug', 'Fibaro Action: Configurations -> '. json_encode($configList) );             
+          log::add('homecenter3', 'debug', 'Fibaro Action: Configurations -> '. json_encode($configList) );             
           foreach( $configList as $config ){ 
             if( $config )        
             $command->setConfiguration( $config['name'], $config['value'] );
@@ -296,11 +296,11 @@ class homecenter extends eqLogic {
     /*     * **********************Getteur Setteur*************************** */
 }
 
-class homecenterCmd extends cmd {
+class homecenter3Cmd extends cmd {
 
 
   public function execute($_options = array()) {
-    log::add('homecenter', 'debug', 'Execute Action : '.$this->getLogicalId() .' Arguments : '. json_encode( $_options ) );
+    log::add('homecenter3', 'debug', 'Execute Action : '.$this->getLogicalId() .' Arguments : '. json_encode( $_options ) );
     
     $eqLogic = $this->getEqLogic();
     $fibaroId = $eqLogic->getConfiguration('fibaroIdModule');    
@@ -320,7 +320,7 @@ class homecenterCmd extends cmd {
     
     }elseif( $fibaroDevice->isCustomExe( $this->getLogicalId(), $_options ) ){
       // Execution directement dans la méthode isCustomExe
-      log::add('homecenter', 'debug', 'Custom Execute : ' .$this->getLogicalId(), $_options );
+      log::add('homecenter3', 'debug', 'Custom Execute : ' .$this->getLogicalId(), $_options );
     
     }else{
       $fibaroServ = FibaroServer::getInstance();

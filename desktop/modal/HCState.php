@@ -48,14 +48,14 @@
         throw new Exception('{{401 - Accès non autorisé}}');
     }
 
-    require_once __DIR__.'/../../core/class/homecenter.class.php';
+    require_once __DIR__.'/../../core/class/homecenter3.class.php';
 
     // Récupération de tous les équipements visibles de FIBARO
     $fibaroServ = FibaroServer::getInstance();    
     $modules = $fibaroServ->getDevicesList();
 
     // Récupératation de tous les équipements
-    $plugin = plugin::byId('homecenter');
+    $plugin = plugin::byId('homecenter3');
     $eqLogics = eqLogic::byType($plugin->getId());
     
     // Récpération des pièces dans Fibaro
@@ -251,4 +251,4 @@
 
 </div>
 
-<?php include_file('desktop', 'HCState', 'js', 'homecenter');?>
+<?php include_file('desktop', 'HCState', 'js', 'homecenter3');?>

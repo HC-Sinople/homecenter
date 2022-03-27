@@ -1,8 +1,8 @@
 {
-	"id" : "homecenter",
-	"name" : "HomeCenter",
+	"id" : "homecenter3",
+	"name" : "HomeCenter3",
 	"description" :  {
-		"fr_FR":"HomeCenter est un plugin permettant d'utiliser les équipements de votre box Fibaro"
+		"fr_FR":"HomeCenter3 est un plugin permettant d'utiliser les équipements de votre box Fibaro"
 		},
 
 	"licence" : "AGPL",

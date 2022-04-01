@@ -2,22 +2,27 @@
 	"id" : "homecenter3",
 	"name" : "HomeCenter3",
 	"description" :  {
-		"fr_FR":"HomeCenter3 est un plugin permettant d'utiliser les équipements de votre box Fibaro"
+		"fr_FR":"HomeCenter3 est un plugin permettant d'utiliser les équipements de votre box Fibaro HomeCenter3 et HomeCenter3 Lite"
 		},
 
+
+	"usage" : "Connectez vous sur votre HomeCenter3 à partir de l'URL Local de la box et de vos identifiant fibaro et ensuite laissez vous guidez par notre interface simple et intuitive. Si vous utilisez HomeBrige, ce plugin a été pensé pour vous machez le travail. Pour plus de détail rendez vous sur notre documentation",
 	"licence" : "AGPL",
 	"author" : "HC-Domotique (F. LALLEMAND)",
-	"require" : "3.2",
+	"require" : "4.2",
 	"hasOwnDeamon" : false,	
 	"hasDependency" : false,
 	"category" : "automation protocol",
 	
 	"changelog" : "https://jeedom.github.io/plugin-template/#language#/changelog",
-	"documentation" : "https://jeedom.github.io/plugin-template/#language#/",
+	"documentation" : "https://hc-sinople.github.io/plugin-homecenter3/#language#/",
 	
 	"changelog_beta" : "https://jeedom.github.io/plugin-template/#language#/beta/changelog",
-	"documentation_beta" : "https://jeedom.github.io/plugin-template/#language#/beta/",
+	"documentation_beta" : "https://hc-sinople.github.io/plugin-homecenter3/beta/#language#/",
 	
+	"video_link": "",
+	"forum_link" : "",
+
 	"link" : {
 		"forum":"Lien vers le forum",
 		"video" : "Lien vers une video"
@@ -27,5 +32,5 @@
 		"fr_FR"
 	],
 
-	"compatibility" : "all"	
+	"compatibility" : [ "v4" ]	
 }

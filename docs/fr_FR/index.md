@@ -1,13 +1,38 @@
-<p align="center">
-  <img src="https://github.com/HC-Sinople/plugin-homecenter3/blob/feature1/docs/images/homecenter3_icon.png" height="140">
-</p>
+## Welcome to GitHub Pages
 
-<span align="center">
+You can use the [editor on GitHub](https://github.com/HC-Sinople/plugin-homecenter3/edit/feature1/docs/index.md) to maintain and preview the content for your website in Markdown files.
 
-# HomeCenter3
-<a href="https://www.npmjs.com/package/homebridge"><img title="npm version" src="https://badgen.net/npm/v/homebridge?label=stable"></a>
-<a href="https://github.com/homebridge/homebridge/wiki/Homebridge-Beta-Testing"><img title="npm version" src="https://badgen.net/npm/v/homebridge/beta?label=beta"></a>
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-</span>
+### Markdown
 
-**HomeCenter3** est un plugin **Jeedom** permettant de coupler les équipements d'une box **FIBARO** HomeCenter3 ou Lite avec votre box domotique Jeedom. Une fois paramétrée vous pourrez intéragir avec les équipements de votre box **FIBARO** dans **Jeedom**. De plus, ce Plugin a été spécialement concu pour faciliter l'intégration de vos nouveaux équipements avec le plugin [HomeBridge](https://nebzhb.github.io/jeedom_docs/plugins/homebridge/fr_FR/).
+Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+
+```markdown
+Syntax highlighted code block
+
+# Header 1
+## Header 2
+### Header 3
+
+- Bulleted
+- List
+
+1. Numbered
+2. List
+
+**Bold** and _Italic_ and `Code` text
+
+[Link](url) and ![Image](src)
+```
+
+For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+
+### Jekyll Themes
+
+Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/HC-Sinople/plugin-homecenter3/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+
+### Support or Contact
+
+Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+

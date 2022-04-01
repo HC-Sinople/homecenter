@@ -15,10 +15,10 @@
 	"category" : "automation protocol",
 	
 	"changelog" : "https://jeedom.github.io/plugin-template/#language#/changelog",
-	"documentation" : "https://jeedom.github.io/plugin-template/#language#/",
+	"documentation" : "https://hc-sinople.github.io/plugin-homecenter3/#language#/",
 	
 	"changelog_beta" : "https://jeedom.github.io/plugin-template/#language#/beta/changelog",
-	"documentation_beta" : "https://jeedom.github.io/plugin-template/#language#/beta/",
+	"documentation_beta" : "https://hc-sinople.github.io/plugin-homecenter3/beta/#language#/",
 	
 	"video_link": "",
 	"forum_link" : "",

@@ -24,15 +24,11 @@ Voici la liste des _baseType_ actuellement gérée par le plugin :
 - com.fibaro.floodSensor,
 - com.fibaro.securityMonitoring.
 
-```
-Cette information est aussi visible et disponible dans la fenêtre d'ajout de nouveaux équipements FIBARO
-```
+> Cette information est aussi visible et disponible dans la fenêtre d'ajout de nouveaux équipements FIBARO
 
 ## Déterminer le baseType dans FIBARO
-```
-Cette action est nécessaire seulement si vous n'avez pas encore acheté le plugin HomeCenter3 
-et que vous souhaitez controler la compatibilité d'un équipement en particulier.
-```
+
+> Cette action est nécessaire seulement si vous n'avez pas encore acheté le plugin HomeCenter3 et que vous souhaitez controler la compatibilité d'un équipement en particulier.
 
 Récupérer le numéro de l'équipement à partir de votre tableau de bord **FIBARO**
 

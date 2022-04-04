@@ -12,19 +12,30 @@
 Tous les équipements dans le système **FIBARO** suivent un modèle et sont normalisés, le plugin **HomeCenter3** utilise cette normalisation pour définir si un équipement est compatible ou non. Plus précisément le plugin utilise la donnée _baseType_ des équipements **FIBARO**. 
 
 Voici la liste des _baseType_ actuellement gérée par le plugin :
-- com.fibaro.binarySwitch,
-- com.fibaro.actor,
-- com.fibaro.FGWP,
-- com.fibaro.baseShutter,
-- com.fibaro.hvacSystem,
-- com.fibaro.multilevelSensor,
-- com.fibaro.doorWindowSensor,
-- com.fibaro.securitySensor,
-- com.fibaro.FGMS001,
-- com.fibaro.floodSensor,
-- com.fibaro.securityMonitoring.
+- com.fibaro.binarySwitch : Interrupteur, module, prise, ect...,
+- com.fibaro.actor : Interrupteur, module, prise, ect...,
+- com.fibaro.FGWP : Prise Plug,
+- com.fibaro.baseShutter : Volet roulant,
+- com.fibaro.hvacSystem : tête thermostatique, chauffage,
+- com.fibaro.multilevelSensor : Capteur de température,
+- com.fibaro.doorWindowSensor : Capteur d'ouverture,
+- com.fibaro.securitySensor : Capteur de mouvement,
+- com.fibaro.FGMS001 : Capteur de mouvement,
+- com.fibaro.floodSensor : Capteur d'innodation,
+- com.fibaro.securityMonitoring : Serrure connectée.
 
 > Cette information est aussi visible et disponible dans la fenêtre d'ajout de nouveaux équipements FIBARO
+
+### Type binarySwitch et actor
+### Type FGWP
+### Type baseShutter
+### Type hvacSystem
+### Type multilevelSensor
+### Type doorWindowSensor
+### Type securitySensor et FGMS001
+### Type floodSensor
+### Type securityMonitoring
+
 
 ## Déterminer le baseType dans FIBARO
 

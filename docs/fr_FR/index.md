@@ -15,6 +15,8 @@
 
 # Configuration des équipements
 
+## Gestion des pièces
+
 ## Ajout d'équipement(s)
 
 # Homebridge

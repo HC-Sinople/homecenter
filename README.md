@@ -16,13 +16,13 @@
 
 ## Documentation
 
-Retrouver toute la docuemention du plugin [ici](https://hc-sinople.github.io/plugin-homecenter3/fr_FR/). 
+Retrouver toute la documention du plugin [ici](https://hc-sinople.github.io/plugin-homecenter3/fr_FR/). 
 
 ## Contacts
 
 Découvrer notre société HC-Domotique sur notre site officiel [HC-Domotique](https://hc-domotique.fr). 
 
 Retrouvez nous aussi sur :
-    - [Facebook](https://www.facebook.com/HC-Domotique-100864221303878/)
-    - [Linkedin](https://fr.linkedin.com/company/hc-domotique)
-    - [YouTube](https://www.youtube.com/channel/UCSRsA41KFuROk-1K5iJS1VQ)
+- [Facebook](https://www.facebook.com/HC-Domotique-100864221303878/)
+- [Linkedin](https://fr.linkedin.com/company/hc-domotique)
+- [YouTube](https://www.youtube.com/channel/UCSRsA41KFuROk-1K5iJS1VQ)

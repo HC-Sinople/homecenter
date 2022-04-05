@@ -157,7 +157,7 @@ Après l'ajout d'un ou plusieurs équipement il suffit de relancer le _Demon_ du
 
 # ChangeLog
 
-Retrouver les changelog [ici](/plugin-homecenter3/fr_FR/changelog.md)
+Retrouver les changelog [ici](/plugin-homecenter3/fr_FR/changelog)
 
 # Support
 

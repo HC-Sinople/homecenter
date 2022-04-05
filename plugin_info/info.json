@@ -2,13 +2,13 @@
 	"id" : "homecenter3",
 	"name" : "HomeCenter3",
 	"description" :  {
-		"fr_FR":"HomeCenter3 est un plugin permettant d'utiliser les équipements de votre box Fibaro HomeCenter3 et HomeCenter3 Lite"
+		"fr_FR":"Beta - HomeCenter3 est un plugin permettant d'utiliser les équipements de votre box Fibaro HomeCenter3 et HomeCenter3 Lite"
 		},
 
 
 	"usage" : "Connectez vous sur votre HomeCenter3 à partir de l'URL Local de la box et de vos identifiant fibaro et ensuite laissez vous guidez par notre interface simple et intuitive. Si vous utilisez HomeBrige, ce plugin a été pensé pour vous machez le travail. Pour plus de détail rendez vous sur notre documentation",
 	"licence" : "AGPL",
-	"author" : "HC-Domotique (F. LALLEMAND1)",
+	"author" : "HC-Domotique (F. LALLEMAND)",
 	"require" : "4.2",
 	"hasOwnDeamon" : false,	
 	"hasDependency" : false,

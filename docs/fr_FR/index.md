@@ -85,6 +85,7 @@ Une fois la configuration saisie et sauvegardée, en appuyant sur le bouton "Raf
 Une fois le plugin **HomeCeneter3** activé et configuré il est conseillé de 
 1. Synchroniser les pièces entre les deux box 
 2. Ajouter des équipements
+3. Mettre à jour la scène d'actualisation
 
 ## Gestion des pièces
 La synchronisation des pièces est facultative mais facilite l'intégration des équipements **FIBARO**. Si les pièces sont synchronisés chaque équipement créé sera automatiquement positionné dans la pièce **JEEDOM** désignée. 
@@ -100,6 +101,34 @@ Lors de la première utilisation du plugin **HomeCenter** chaque pièce visible 
 Une fois sauvegarder celle ci apparaitra en vert dans l'écran principal. 
 
 ## Ajout d'équipement(s)
+Pour ajouter un ou plusieurs équipements aller sur le bouton d'ajout
+
+![Screen11](/plugin-homecenter3/assets/images/Screen11.png) 
+
+![Screen12](/plugin-homecenter3/assets/images/Screen12.png)
+
+A l'ouverture de cet écran, tous les équipements visibles de votre box **FIBARO** vont s'afficher ainsi que tous les équipements **JEEDOM** faisant partis du plugin **HomeCenter3**. Un code couleur permet de les différenciers la source des données d'un équipement :
+- En bleu : Les données en provenance de **FIBARO**
+- En vert : Les données en provenance de **JEEDOM**
+
+Dans cette synthèse on retrouve les informations suivantes :
+- L'ID : Numéro interne de l'équipement 
+- Le nom de l'équipement 
+- La pièce dans laquelle est situé l'équipement 
+- Le type d'équipement (information défini en fonction du _baseType_)
+- L'état de l'équipement : C'est un statut permettant d'identifier à un instant T l'état de l'équipement 
+  - Disponible : L'équipement existe dans votre box **FIBARO** et peut être jumulé avec un équipement **JEEDOM**
+  - Jumelé : L'équipement est jumulé et fonctionnel 
+  - Non compatible : L'équipement n'est pas compatible avec le plugin et donc ne peut être jumelé
+  - Sans réponse : L'équipement **JEEDOM** n'arrive pas à communiquer avec son homologue **FIBARO**
+
+Pour ajouter un équipement il faut le sélectionner via la case à cocher de la colonne "Action" et que celui ci soit au statut disponible. On peut en sélectionner plusieurs à la fois afin d'ajouter plusieurs équipements en même temps. Enregistrer.
+
+![Screen13](/plugin-homecenter3/assets/images/Screen13.png)
+
+De retour sur l'écran principal actualisé celle ci pour voir apparaitre vos nouveaux équipement. 
+
+## Scène d'actualisation FIBARO
 
 # Homebridge
 

@@ -1,52 +1,30 @@
 {
 	"id" : "homecenter3",
 	"name" : "HomeCenter3",
-	"specialAttributes" : {
-		"object" : {
-			"toto" : {"name" : {"fr_FR" : "Plop je suis un attribut spécial"},"type" : "input"},
-			"toto2" : {"name" : {"fr_FR" : "Plop je suis un attribut spécial number"},"type" : "number"}
+	"description" :  {
+		"fr_FR":"HomeCenter3 est un plugin permettant d'utiliser les équipements de votre box Fibaro HomeCenter3 ou HomeCenter3 Lite"
 		},
-		"user" : {
-			"toto" : {"name" : {"fr_FR" : "Plop je suis un attribut spécial"},"type" : "select","values" : [{"value" : "1", "name" : "valeur 1"},{"value" : "plop", "name" : "valeur plop"}]}
-		}
-	},
-	"description" : {
-		"fr_FR": "Template servant de base à la création de plugins pour Jeedom"
-	},
+
+
+	"usage" : {
+		"fr_FR":"Connectez vous sur votre HomeCenter3 à partir de l'URL Local de la box et de vos identifiant fibaro et ensuite laissez vous guidez par notre interface simple et intuitive. Si vous utilisez HomeBrige, ce plugin a été pensé pour vous machez le travail. Pour plus de détail rendez vous sur notre documentation"
+		},
 	"licence" : "AGPL",
-	"author" : "Jeedom SAS",
-	"require" : "3.3.39",
-	"category" : "programming",
+	"author" : "HC-Domotique (F. LALLEMAND)",
+	"require" : "4.2",
+	"hasOwnDeamon" : false,	
 	"hasDependency" : false,
-	"hasOwnDeamon" : false,
-	"maxDependancyInstallTime" : 0,
-	"changelog" : "https://jeedom.github.io/plugin-template/#language#/changelog",
-	"documentation" : "https://jeedom.github.io/plugin-template/#language#/",
-	"changelog_beta" : "https://jeedom.github.io/plugin-template/#language#/beta/changelog",
-	"documentation_beta" : "https://jeedom.github.io/plugin-template/#language#/beta/",
-	"link" : {
-		"forum":"Lien vers le forum",
-		"video" : "Lien vers une video"
-	},
+	"category" : "automation protocol",
+	
+	"changelog" : "https://hc-sinople.github.io/plugin-homecenter3/#language#/changelog",
+	"documentation" : "https://hc-sinople.github.io/plugin-homecenter3/#language#/",
+	
+	"changelog_beta" : "https://hc-sinople.github.io/plugin-homecenter3/beta/#language#/changelog",
+	"documentation_beta" : "https://hc-sinople.github.io/plugin-homecenter3/beta/#language#/",
+
 	"language": [
-		"fr_FR",
-		"en_US",
-		"es_ES",
-		"de_DE",
-		"ru_RU",
-		"id_ID",
-		"it_IT",
-		"ja_JP",
-		"pt_PT"
+		"fr_FR"
 	],
-	"compatibility": [
-		"miniplus",
-		"smart",
-		"rpi",
-		"docker",
-		"diy",
-		"mobile",
-		"v4",
-		"atlas"
-	]
+
+	"compatibility" : [ "V4" ]	
 }

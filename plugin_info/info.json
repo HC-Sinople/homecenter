@@ -26,5 +26,5 @@
 		"fr_FR"
 	],
 
-	"compatibility" : [ "all" ]	
+	"compatibility" : [ "v4" ]	
 }

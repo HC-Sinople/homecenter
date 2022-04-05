@@ -14,10 +14,10 @@
 	"hasDependency" : false,
 	"category" : "automation protocol",
 	
-	"changelog" : "https://jeedom.github.io/plugin-template/#language#/changelog",
+	"changelog" : "https://hc-sinople.github.io/plugin-homecenter3/changelog",
 	"documentation" : "https://hc-sinople.github.io/plugin-homecenter3/#language#/",
 	
-	"changelog_beta" : "https://jeedom.github.io/plugin-template/#language#/beta/changelog",
+	"changelog_beta" : "https://hc-sinople.github.io/plugin-homecenter3/beta/changelog",
 	"documentation_beta" : "https://hc-sinople.github.io/plugin-homecenter3/beta/#language#/",
 	
 	"video_link": "",

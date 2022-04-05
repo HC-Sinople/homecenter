@@ -14,19 +14,11 @@
 	"hasDependency" : false,
 	"category" : "automation protocol",
 	
-	"changelog" : "https://hc-sinople.github.io/plugin-homecenter3/changelog",
+	"changelog" : "https://hc-sinople.github.io/plugin-homecenter3/#language#/changelog",
 	"documentation" : "https://hc-sinople.github.io/plugin-homecenter3/#language#/",
 	
-	"changelog_beta" : "https://hc-sinople.github.io/plugin-homecenter3/beta/changelog",
+	"changelog_beta" : "https://hc-sinople.github.io/plugin-homecenter3/beta/#language#/changelog",
 	"documentation_beta" : "https://hc-sinople.github.io/plugin-homecenter3/beta/#language#/",
-	
-	"video_link": "",
-	"forum_link" : "",
-
-	"link" : {
-		"forum":"Lien vers le forum",
-		"video" : "Lien vers une video"
-	},
 
 	"language": [
 		"fr_FR"

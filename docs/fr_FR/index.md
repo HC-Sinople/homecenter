@@ -8,11 +8,11 @@
 
 Le plugin **HomeCenter3** est composé de deux écrans principaux 
 
-![Screen7](/plugin-homecenter3/assets/images/Screen7.png)
+![Screen8](/plugin-homecenter3/assets/images/Screen8.png)
 L'écran principale vous permettant de lier vos pièces et vos équipements de votre box **FIBARO** à votre box **JEEDOM**
 
 
-![Screen8](/plugin-homecenter3/assets/images/Screen8.png)
+![Screen7](/plugin-homecenter3/assets/images/Screen7.png)
 Un écran avec une vue générale vous permettant d'ajouter et de controler l'état de vos équipement **FIBARO**. 
 
 > Cet écran liste l'ensemble des équipements visible dans votre box **FIBARO**
@@ -35,6 +35,7 @@ Voici la liste des _baseType_ actuellement gérée par le plugin :
 
 > Cette information est aussi visible et disponible dans la fenêtre d'ajout de nouveaux équipements FIBARO
 
+<!-- 
 ### Type binarySwitch et actor
 ### Type FGWP
 ### Type baseShutter
@@ -44,7 +45,7 @@ Voici la liste des _baseType_ actuellement gérée par le plugin :
 ### Type securitySensor et FGMS001
 ### Type floodSensor
 ### Type securityMonitoring
-
+-->
 
 ## Déterminer le baseType dans FIBARO
 
@@ -67,6 +68,18 @@ Vous trouverez dans la réponse l'attribut _baseType_
 ![Screen6](/plugin-homecenter3/assets/images/Screen6.png) 
 
 # Configuration du plugin 
+Avant de pouvoir utiliser le plugin quelques inforamtions sont nécessaire pour que votre box **JEEDOM** puisse se connecter à votre box **FIBARO**. Une fois le plugin activé il faut alimenter le block de configuation suivant :
+
+![Screen1](/plugin-homecenter3/assets/images/Screen1.png) 
+
+Vous retrouverez toutes ces informations sur votre page de connexion de votre box **FIBARO**
+
+![Screen2](/plugin-homecenter3/assets/images/Screen2.png) 
+> Dans la saisie de l'URL notez qu'il ne faut pas mettre le 'HTTP://'
+
+Une fois la configuration saisie et sauvegardée, en appuyant sur le bouton "Raffraichir" l'indicateur "Communication HomeCenter" doit passer à "OK". Si ce n'est pas le cas, une des informations saisies est erronée.
+
+> Le paramètre "Scène HomeCenter de MAJ" vous permet de connaitre la scène crée dans votre box **FIBARO** permettant de gérer le retour d'état de chaqu'un de vos équipement.
 
 # Configuration des équipements
 

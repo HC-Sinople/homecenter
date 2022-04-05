@@ -82,8 +82,22 @@ Une fois la configuration saisie et sauvegardée, en appuyant sur le bouton "Raf
 > Le paramètre "Scène HomeCenter de MAJ" vous permet de connaitre la scène crée dans votre box **FIBARO** permettant de gérer le retour d'état de chaqu'un de vos équipement.
 
 # Configuration des équipements
+Une fois le plugin **HomeCeneter3** activé et configuré il est conseillé de 
+1. Synchroniser les pièces entre les deux box 
+2. Ajouter des équipements
 
 ## Gestion des pièces
+La synchronisation des pièces est facultative mais facilite l'intégration des équipements **FIBARO**. Si les pièces sont synchronisés chaque équipement créé sera automatiquement positionné dans la pièce **JEEDOM** désignée. 
+
+![Screen9](/plugin-homecenter3/assets/images/Screen9.png) 
+
+Lors de la première utilisation du plugin **HomeCenter** chaque pièce visible de votre système **JEEDOM** apparaissent en rouge. Pour effectuer une synchronisation entre pièce il est nécessaire d'ajouter la pièce **FIBARO** correspondante dans votre pièce **JEEDOM**.
+
+![Screen10](/plugin-homecenter3/assets/images/Screen10.png) 
+
+> La liste déroulante de pièce est une extraction des pièces visible de votre box **FIBARO** 
+
+Une fois sauvegarder celle ci apparaitra en vert dans l'écran principal. 
 
 ## Ajout d'équipement(s)
 

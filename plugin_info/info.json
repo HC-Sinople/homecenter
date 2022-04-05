@@ -4,13 +4,30 @@
 	"description" :  {
 		"fr_FR":"Beta - HomeCenter3 est un plugin permettant d'utiliser les équipements de votre box Fibaro HomeCenter3 et HomeCenter3 Lite"
 		}, 
+	
+	"changelog" : "https://hc-sinople.github.io/plugin-homecenter3/#language#/changelog",
+	"documentation" : "https://hc-sinople.github.io/plugin-homecenter3/#language#/",
+	
+	"changelog_beta" : "https://hc-sinople.github.io/plugin-homecenter3/beta/#language#/changelog",
+	"documentation_beta" : "https://hc-sinople.github.io/plugin-homecenter3/beta/#language#/",
+	
+	"usage" : {
+		"fr_FR":"Connectez vous sur votre HomeCenter3 à partir de l'URL Local de la box et de vos identifiant fibaro et ensuite laissez vous guidez par notre interface simple et intuitive. Si vous utilisez HomeBrige, ce plugin a été pensé pour vous machez le travail. Pour plus de détail rendez vous sur notre documentation"
+		},
+	
 	"licence" : "AGPL",
-	"author" : "RSyrek (Rem'S)",
-	"require" : "3.2",
+	"author" : "HC-Domotique (F. LALLEMAND)",
+	"require" : "4.2",
+	"hasOwnDeamon" : false,	
+	"hasDependency" : false,
 	"category" : "automation protocol",
-	"changelog" : "https://rems02.github.io/fibaro/#language#/changelog",
-	"documentation" : "https://rems02.github.io/fibaro/#language#/",
-	"language" : "fr_FR",
-	"compatibility" : "all"		
+	
+
+
+	"language": [
+		"fr_FR"
+	],
+
+	"compatibility" : [ "all" ]	
 	
 }

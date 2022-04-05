@@ -129,6 +129,19 @@ Pour ajouter un équipement il faut le sélectionner via la case à cocher de la
 De retour sur l'écran principal actualisé celle ci pour voir apparaitre vos nouveaux équipement. 
 
 ## Scène d'actualisation FIBARO
+Afin d'avoir un retour d'état dans **JEEDOM** lorsque l'équipement est modifié depuis la box **FIBARO** il est nécessaire de créer une _scène_ dans le système **FIBARO**. Cette _scène_ a pour but de lancer une action de raffraichissement de l'équipement dans **JEEDOM** lorsqu'un changement d'état est détecté. 
+
+C'est pourquoi, après chaque ajout d'un nouvel équipement, il est nécessaire d'actualiser cette _scène_ pour prendre en compte le ou les nouveaux équipements fraichements ajoutés. 
+
+![Screen14](/plugin-homecenter3/assets/images/Screen14.png)
+
+> La _scène_ est automatiquement créée si celle-ci n'existe pas dans la box **FIBARO**
+
+Retrouver votre _scène_ dans la box **FIBARO** dans l'onglet _Scénario_ en sélectionnant les scénarios cachés
+
+![Screen15](/plugin-homecenter3/assets/images/Screen15.png)
+
+> Le numéro de la _scène_ est disponible dans l'écran de configuration du plugin 
 
 # Homebridge
 

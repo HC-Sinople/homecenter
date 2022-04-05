@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/HC-Sinople/plugin-homecenter3/raw/feature1/docs/assets/images/homecenter3_icon.png" height="140">
+  <img src="https://github.com/HC-Sinople/plugin-homecenter3/raw/stable/docs/assets/images/homecenter3_icon.png" height="140">
 </p>
 
 <span align="center">

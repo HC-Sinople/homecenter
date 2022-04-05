@@ -3,6 +3,14 @@
 	"name" : "HomeCenter3",
 	"description" :  {
 		"fr_FR":"Beta - HomeCenter3 est un plugin permettant d'utiliser les équipements de votre box Fibaro HomeCenter3 et HomeCenter3 Lite"
-		}
+		}, 
+	"licence" : "AGPL",
+	"author" : "RSyrek (Rem'S)",
+	"require" : "3.2",
+	"category" : "automation protocol",
+	"changelog" : "https://rems02.github.io/fibaro/#language#/changelog",
+	"documentation" : "https://rems02.github.io/fibaro/#language#/",
+	"language" : "fr_FR",
+	"compatibility" : "all"		
 	
 }

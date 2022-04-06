@@ -49,7 +49,7 @@ Voici la liste des _baseType_ actuellement gérée par le plugin :
 
 ## Déterminer le baseType dans FIBARO
 
-> Cette action est nécessaire seulement si vous n'avez pas encore acheté le plugin HomeCenter3 et que vous souhaitez controler la compatibilité d'un équipement en particulier.
+> Cette action est nécessaire seulement si vous n'avez pas encore acheté le plugin **HomeCenter3** et que vous souhaitez controler la compatibilité d'un équipement en particulier.
 
 Récupérer le numéro de l'équipement à partir de votre tableau de bord **FIBARO**
 
@@ -79,16 +79,16 @@ Vous retrouverez toutes ces informations sur votre page de connexion de votre bo
 
 Une fois la configuration saisie et sauvegardée, en appuyant sur le bouton "Raffraichir" l'indicateur "Communication HomeCenter" doit passer à "OK". Si ce n'est pas le cas, une des informations saisies est erronée.
 
-> Le paramètre "Scène HomeCenter de MAJ" vous permet de connaitre la scène crée dans votre box **FIBARO** permettant de gérer le retour d'état de chaqu'un de vos équipement.
+> Le paramètre "Scène HomeCenter de MAJ" vous permet de connaitre le numéro de la scène utilisée dans votre box **FIBARO** qui gère le retour d'état de tous vos équipements **JEEDOM** jumelé.
 
 # Configuration des équipements
-Une fois le plugin **HomeCeneter3** activé et configuré il est conseillé de 
+Une fois le plugin **HomeCenter3** activé et configuré il est conseillé de :
 1. Synchroniser les pièces entre les deux box 
 2. Ajouter des équipements
 3. Mettre à jour la scène d'actualisation
 
 ## Gestion des pièces
-La synchronisation des pièces est facultative mais facilite l'intégration des équipements **FIBARO**. Si les pièces sont synchronisés chaque équipement créé sera automatiquement positionné dans la pièce **JEEDOM** désignée. 
+La synchronisation des pièces est facultative mais facilite l'intégration des équipements **FIBARO**. Si les pièces sont synchronisées chaque équipement créé sera automatiquement positionné dans la pièce **JEEDOM** désignée. 
 
 ![Screen9](/plugin-homecenter3/assets/images/Screen9.png) 
 
@@ -107,7 +107,7 @@ Pour ajouter un ou plusieurs équipements aller sur le bouton d'ajout
 
 ![Screen12](/plugin-homecenter3/assets/images/Screen12.png)
 
-A l'ouverture de cet écran, tous les équipements visibles de votre box **FIBARO** vont s'afficher ainsi que tous les équipements **JEEDOM** faisant partis du plugin **HomeCenter3**. Un code couleur permet de les différenciers la source des données d'un équipement :
+A l'ouverture de cet écran, tous les équipements visibles de votre box **FIBARO** vont s'afficher ainsi que tous les équipements **JEEDOM** faisant partie du plugin **HomeCenter3**. Un code couleur permet de différenciers la source des données d'un équipement :
 - En bleu : Les données en provenance de **FIBARO**
 - En vert : Les données en provenance de **JEEDOM**
 
@@ -122,11 +122,11 @@ Dans cette synthèse on retrouve les informations suivantes :
   - Non compatible : L'équipement n'est pas compatible avec le plugin et donc ne peut être jumelé
   - Sans réponse : L'équipement **JEEDOM** n'arrive pas à communiquer avec son homologue **FIBARO**
 
-Pour ajouter un équipement il faut le sélectionner via la case à cocher de la colonne "Action" et que celui ci soit au statut disponible. On peut en sélectionner plusieurs à la fois afin d'ajouter plusieurs équipements en même temps. Enregistrer.
+Pour ajouter un équipement il faut le sélectionner via la case à cocher de la colonne "Action" et que celui ci soit au statut _disponible_. On peut en sélectionner plusieurs à la fois afin d'ajouter plusieurs équipements en même temps. Le bouton _Enregistrer_ permet de créer dans **JEEDOM** vos équipements sélectionnés.
 
 ![Screen13](/plugin-homecenter3/assets/images/Screen13.png)
 
-De retour sur l'écran principal actualisé celle ci pour voir apparaitre vos nouveaux équipement. 
+De retour sur l'écran principal, actualisez celle ci pour voir apparaitre vos nouveaux équipements. 
 
 ## Scène d'actualisation FIBARO
 Afin d'avoir un retour d'état dans **JEEDOM** lorsque l'équipement est modifié depuis la box **FIBARO** il est nécessaire de créer une _scène_ dans le système **FIBARO**. Cette _scène_ a pour but de lancer une action de raffraichissement de l'équipement dans **JEEDOM** lorsqu'un changement d'état est détecté. 
@@ -152,12 +152,10 @@ Après l'ajout d'un ou plusieurs équipement il suffit de relancer le _Demon_ du
 
 ![Screen16](/plugin-homecenter3/assets/images/Screen16.png)
 
-> Attention, ce plugin facilite simplement l'intégration des équipements en préconfigurant ceux-ci. Nous ne pouvons pas garantir que tous les équipements soient compatible avec HomeBridge ou qu'ils le resteront si celui ci change
+> Attention, ce plugin facilite simplement l'intégration des équipements en préconfigurant ceux-ci. Nous ne pouvons pas garantir que tous les équipements soient compatibles avec HomeBridge ou qu'ils le resteront si celui-ci change
 
 
 # ChangeLog
+### Retrouver les changelog [ici](/plugin-homecenter3/fr_FR/changelog)
 
-Retrouver les changelog [ici](/plugin-homecenter3/fr_FR/changelog.md)
-
-# Support
 

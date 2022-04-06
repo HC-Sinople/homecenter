@@ -1,74 +1,4 @@
 
-/*
-$('.addDevice').on('click', function (event) {
-  var fibaroId = $(this).attr('data-fibaro_id');
-  var rowId = $(this).closest('tr').index();
-
-  if(fibaroId){
-
-    $.ajax({
-      type: 'POST',
-      url: 'plugins/homecenter3/core/ajax/homecenter3.ajax.php',
-      data: {
-          action: 'DefineEqLogic',
-          fibaroId : fibaroId,
-      },
-      dataType: 'json',
-      global: false,
-      error: function (request, status, error) {     
-          bootbox.alert("ERREUR 'readDevConfig' !<br>status="+status+"<br>error="+error);
-      },
-      success: function (json_res) {
-  
-        res = JSON.parse(json_res.result);
-        eqLogics = Array(res.eqLogic);
-  
-        jeedom.eqLogic.save({
-          type: eqType,
-          eqLogics: eqLogics, 
-          error: function (error) {
-              $('#div_alert').showAlert({message: error.message, level: 'danger'});
-          },
-          success: function (_data) {
-            var jeedom = '.jeedomId:eq(' + rowId + ')';
-            var separator = '.separatorId:eq(' + rowId + ')';
-            $(jeedom).text(_data.id);
-            $(separator).show();
-            
-            var jeedom = '.jeedomName:eq(' + rowId + ')';
-            var separator = '.separatorName:eq(' + rowId + ')';    
-            $(jeedom).text(_data.name);
-            $(separator).show();
-
-            var jeedom = `.jeedomRoom:eq(${rowId})`;
-            var separator = `.separatorRoom:eq(${rowId})`;    
-            $(jeedom).text(_data.object_id);
-            $(separator).show();
-        
-            var jeedom = `.jeedomState:eq(${rowId})`;
-            $(jeedom).text('{{jumelé}}');
-            $(jeedom).removeClass("label-warning").addClass("label-success");
-        
-            var jeedom = `.fa-plus-circle:eq(${rowId})`;
-            //$(jeedom).css({ 'color': '#80808073' }); 
-            $(this).removeClass("cursor").removeClass("addDevice");
-            $(this).attr('data-fibaro_id', null);    
-           
-            loadPage('index.php?v=d&m=homecenter3&p=homecenter3' + '&saveSuccessFull=1')
-            $('#div_alert').showAlert({message: '{{Sauvegarde effectuée avec succès}}', level: 'success'})            
-
-          }
-
-        });
-        
-      }
-    });
-  
-  }
-
-});
-*/
-
 // Sauvegarde des modules 
 $('#bt_save').on('click', function (event) {
   event.preventDefault();
@@ -107,7 +37,7 @@ $('#bt_save').on('click', function (event) {
             },
             success: function (_data) {
               console.log(_data);
-              //loadPage('index.php?v=d&m=homecenter3&p=homecenter3' + '&saveSuccessFull=1')
+              loadPage('index.php?v=d&m=homecenter3&p=homecenter3' + '&saveSuccessFull=1')
               //$('#div_alert').showAlert({message: '{{Sauvegarde effectuée avec succès}}', level: 'success'})            
             }
         

@@ -25,9 +25,7 @@ if (!isConnect()) {
 
 
 // Test de connection 
-//echo "<script>alert('A')</script>";
 $deamonRunning = homecenter3::deamonRunning();
-//echo "<script>alert('B')</script>";
 ?>
 
 <form class="form-horizontal">

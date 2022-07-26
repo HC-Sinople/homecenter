@@ -45,8 +45,12 @@ class FibaroServer {
     if( !$this->connected ){
       $this->connected = true;
       $json_data = $this->executeRequest($this::API_NAME['login'] ); 
-      $this->connected = $json_data->status;
-      $this->blockedTime = $json_data->timeLeft;
+      if( !$json_data ){
+        $this->connected = $json_data->status;
+        $this->blockedTime = $json_data->timeLeft;
+      } else {
+		    $this->connected = false;
+      } 
     }    
 
   }
@@ -108,52 +112,54 @@ class FibaroServer {
   public function getDevicesList( $_withoutInfo = false ){
     $DeviceArray = array();
     
-    $n = 0;
+    if( $this->connected ){
+      $n = 0;
 
-    if( !$_withoutInfo ){
-      $request = $this::API_NAME['infoDevice'] . '?selectors=properties&visible=true';
-      $json_info = $this->executeRequest( $request );
-      
-      $request = $this::API_NAME['device'] . '?visible=true';
-      $json_detail = $this->executeRequest( $request );      
-      
-      foreach($json_info as $jsonDeviceI){
-        $n++;
+      if( !$_withoutInfo ){
+        $request = $this::API_NAME['infoDevice'] . '?selectors=properties&visible=true';
+        $json_info = $this->executeRequest( $request );
+        
+        $request = $this::API_NAME['device'] . '?visible=true';
+        $json_detail = $this->executeRequest( $request );      
+        
+        foreach($json_info as $jsonDeviceI){
+          $n++;
 
-        if( $jsonDeviceI->roomId != '0' ){
+          if( $jsonDeviceI->roomId != '0' ){
 
-          $jsonDeviceD = null;
-          foreach($json_detail as $json_detail_key => $jsonDeviceSel ){
-            if( $jsonDeviceI->id == $jsonDeviceSel->id ){
-              $jsonDeviceD = $jsonDeviceSel;
-              unset($json_detail[$json_detail_key]);
-              break;              
+            $jsonDeviceD = null;
+            foreach($json_detail as $json_detail_key => $jsonDeviceSel ){
+              if( $jsonDeviceI->id == $jsonDeviceSel->id ){
+                $jsonDeviceD = $jsonDeviceSel;
+                unset($json_detail[$json_detail_key]);
+                break;              
+              }
             }
+
+            $fibDevice = FibaroDevice::getFromJson($jsonDeviceD, $jsonDeviceI);
+            log::add('homecenter3', 'debug', 'Devices:'.$fibDevice->getId() .' / ' .$fibDevice->getName());
+            $DeviceArray[$n] = $fibDevice;            
+          
           }
 
-          $fibDevice = FibaroDevice::getFromJson($jsonDeviceD, $jsonDeviceI);
-          log::add('homecenter3', 'debug', 'Devices:'.$fibDevice->getId() .' / ' .$fibDevice->getName());
-          $DeviceArray[$n] = $fibDevice;            
-        
         }
+      }else{
+        
+        $request = $this::API_NAME['device'] . '?visible=true';
+        $json_detail = $this->executeRequest( $request );  
+        foreach($json_detail as $jsonDeviceD){
+          $n++;
 
+          if( $jsonDeviceD->roomID != '0' ){
+
+            $fibDevice = FibaroDevice::getFromJson( $jsonDeviceD );
+            log::add('homecenter3', 'debug', 'Devices:'.$fibDevice->getId() .' / ' .$fibDevice->getName());
+            $DeviceArray[$n] = $fibDevice;            
+          
+          }
+
+        }                  
       }
-    }else{
-      
-      $request = $this::API_NAME['device'] . '?visible=true';
-      $json_detail = $this->executeRequest( $request );  
-      foreach($json_detail as $jsonDeviceD){
-        $n++;
-
-        if( $jsonDeviceD->roomID != '0' ){
-
-          $fibDevice = FibaroDevice::getFromJson( $jsonDeviceD );
-          log::add('homecenter3', 'debug', 'Devices:'.$fibDevice->getId() .' / ' .$fibDevice->getName());
-          $DeviceArray[$n] = $fibDevice;            
-        
-        }
-
-      }                  
     }
 
     return $DeviceArray;
@@ -164,7 +170,8 @@ class FibaroServer {
   public function getDeviceByID($_deviceId){
 
     $json_data = $this->executeRequest($this::API_NAME['device'] . '/' . $_deviceId);
-    return $json_data;    
+    return $json_data; 
+    
   }
   
   // Récupération des propriétés d'un module
@@ -190,17 +197,20 @@ class FibaroServer {
   public function getAllRooms(){
     
     $RoomArray = array();
-    $n = 0;
+    
+    if( $this->connected ){
+      $n = 0;
 
-    $json_data = $this->executeRequest($this::API_NAME['allRooms']);
-    
-    foreach($json_data as $jsonRoom){
-      $n++;
-      $fibRoom = new FibaroRoom($jsonRoom);
-      log::add('homecenter3', 'debug', 'pièce:'.$fibRoom->getId() .' / ' .$fibRoom->getName());
-      $RoomArray[$n] = $fibRoom;
+      $json_data = $this->executeRequest($this::API_NAME['allRooms']);
+      
+      foreach($json_data as $jsonRoom){
+        $n++;
+        $fibRoom = new FibaroRoom($jsonRoom);
+        log::add('homecenter3', 'debug', 'pièce:'.$fibRoom->getId() .' / ' .$fibRoom->getName());
+        $RoomArray[$n] = $fibRoom;
+      }
     }
-    
+
     return $RoomArray;
 
   }

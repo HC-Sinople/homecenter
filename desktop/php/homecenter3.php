@@ -1,8 +1,8 @@
 <?php
-if (!isConnect('admin')) {
-	throw new Exception('{{401 - Accès non autorisé}}');
-}
-  
+  if (!isConnect('admin')) {
+    throw new Exception('{{401 - Accès non autorisé}}');
+  }
+
   $plugin = plugin::byId('homecenter3');
   sendVarToJS('eqType', $plugin->getId()); 
   $eqLogics = eqLogic::byType($plugin->getId());
@@ -15,11 +15,19 @@ if (!isConnect('admin')) {
   $isConnected = $fibaroServ->isConnected();
   sendVarToJS('isConnected', $isConnected ); 
   
+
+  if (!$isConnected {
+    throw new Exception('{{402 - Problème de connexion à la box Fibaro }}');
+  }else{
+
   $isBlocked = $fibaroServ->isBlocked();
   sendVarToJS('isBlocked', $isBlocked );   
-
+  
+  echo '<script>alert("TEST")</script>';
 
   $fibaroServ->getDevicesList( true );
+
+  }
 
 ?>
 

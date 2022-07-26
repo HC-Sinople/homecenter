@@ -45,7 +45,7 @@ class FibaroServer {
     if( !$this->connected ){
       $this->connected = true;
       $json_data = $this->executeRequest($this::API_NAME['login'] ); 
-      if( !$json_data ){
+      if( $json_data ){
         $this->connected = $json_data->status;
         $this->blockedTime = $json_data->timeLeft;
       } else {
@@ -197,7 +197,7 @@ class FibaroServer {
   public function getAllRooms(){
     
     $RoomArray = array();
-    
+
     if( $this->connected ){
       $n = 0;
 

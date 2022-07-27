@@ -15,18 +15,11 @@
   $isConnected = $fibaroServ->isConnected();
   sendVarToJS('isConnected', $isConnected ); 
   
+  if ($isConnected) {
+    $isBlocked = $fibaroServ->isBlocked();
+    sendVarToJS('isBlocked', $isBlocked );   
 
-  if (!$isConnected {
-    throw new Exception('{{402 - Problème de connexion à la box Fibaro }}');
-  }else{
-
-  $isBlocked = $fibaroServ->isBlocked();
-  sendVarToJS('isBlocked', $isBlocked );   
-  
-  echo '<script>alert("TEST")</script>';
-
-  $fibaroServ->getDevicesList( true );
-
+    $fibaroServ->getDevicesList( true );
   }
 
 ?>

@@ -7,6 +7,7 @@
   sendVarToJS('eqType', $plugin->getId()); 
   $eqLogics = eqLogic::byType($plugin->getId());
   $allObject = jeeObject::all(true);
+  $isBlocked = false;
 
   // Chargement de tous les équipements Fibaro en mémoire
   $fibaroServ = FibaroServer::getInstance( );
@@ -16,12 +17,12 @@
   sendVarToJS('isConnected', $isConnected ); 
   
   if ($isConnected) {
-    $isBlocked = $fibaroServ->isBlocked();
-    sendVarToJS('isBlocked', $isBlocked );   
-
+    $isBlocked = $fibaroServ->isBlocked(); 
     $fibaroServ->getDevicesList( true );
   }
 
+  sendVarToJS('isBlocked', $isBlocked ); 
+   
 ?>
 
 <div class="row row-overflow">

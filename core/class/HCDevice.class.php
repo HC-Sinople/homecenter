@@ -29,6 +29,7 @@
             'capteurMouv' => 'com.fibaro.securitySensor',
             'capteurMouv2' => 'com.fibaro.FGMS001',
             'capteurFuite' => 'com.fibaro.floodSensor',
+            'capteurFume'  => 'com.fibaro.smokeSensor',
             'serrure' => 'com.fibaro.securityMonitoring'
         );
 
@@ -91,6 +92,10 @@
                 case self::FIBARO_BASETYPE['capteurFuite'] :
                     $device = new FibaroSensorWater($_jsonInfo, $_jsonDetail);   
                     break;                    
+
+                case self::FIBARO_BASETYPE['capteurSmoke'] :
+                    $device = new FibaroSensorSmoke($_jsonInfo, $_jsonDetail);   
+                    break;     
 
                 case self::FIBARO_BASETYPE['capteurOuv'];
                 case self::FIBARO_BASETYPE['capteurOuv2'] :
@@ -952,6 +957,30 @@
           
     }       
 
+    class FibaroSensorSmoke extends FibaroSensor{
+
+
+        function __construct($_jsonInfo, $_jsonDetail) {
+            
+            parent::__construct($_jsonInfo, $_jsonDetail);
+
+            $this->genericTypes[ 'value' ] = 'SMOKE';
+            
+        }
+
+        public function getTypeName() {
+            return '{{Capteur fumée}}';
+        }  
+
+        public function getTemplate( $info ){
+            $template = parent::getTemplate($info);
+            if(!$template){
+                if( $info == 'value' ) $template = 'alert';                 
+            }
+            return $template;
+        }         
+          
+    }  
     class FibaroLock extends FibaroDevice{
 
 

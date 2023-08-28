@@ -956,89 +956,6 @@
         }         
           
     }       
-
-    class FibaroSensorSmoke extends FibaroSensor{
-
-        private $sensorId, $sensorValue;
-
-        function __construct($_jsonInfo, $_jsonDetail) {
-            
-            parent::__construct($_jsonInfo, $_jsonDetail);
-
-            $room = FibaroRoom::getById( $this->getRoomId() );
-            if( isset( $room ) ) {
-                $this->sensorId = $room->getSensorTempId();
-                $device = FibaroDevice::getFromId( $this->sensorId );
-                if( $device->getType() == self::FIBARO_TYPE['temperature'] ) {
-                    $values = $device->getValues();
-                    $this->sensorValue = $values[0]['value'];
-                }
-            }
-            
-            $this->values[ 3 ] = array( 'name'  => 'temperature',
-                                        'value' => $this->sensorValue,,
-                                        'type'  => 'info' );  
-
-            $this->genericTypes[ 'value' ] = 'SMOKE';
-            $this->genericTypes[ 'temperature' ] = 'TEMPERATURE';    
-        }
-
-        public function getTypeName() {
-            return '{{Capteur fumée}}';
-        }  
-
-        public function getTemplate( $info ){
-            $template = parent::getTemplate($info);
-            if(!$template){
-                if( $info == 'value' ) $template = 'alert';   
-                elseif( $info == 'currentTemp' ) $template = 'tile';               
-            }
-            return $template;
-        }         
-          
-        protected function addCustomActions( $_count ){
-            
-            
-            $count = parent::addCustomActions( $_count );
-            
-            $count++;
-            
-            $configList[ 0 ] = array( 'name' => 'SensorId',
-                                      'value' => $this->sensorId );
-
-            $actionTmp = array( 'id' => 'temperature',
-                                'label' => 'Temperature',
-                                'type' => 'info',
-                                'subType' => 'numeric',
-                                'unite'   => $this->getUnit(),
-                                'config' => $configList );
-
-            $this->actions[$count] = $actionTmp; 
-
-            /*
-            $count++;
-            $actionTmp = array( 'id' => 'mode',
-                                'label' => 'Mode',
-                                'type' => 'info',
-                                'subType' => 'string' );
-
-            $this->actions[$count] = $actionTmp;     
-
-            
-            $count++;
-            $configList[ 0 ] = array( 'name' => 'listValue',
-                                      'value' => 'OFF|Off;AUTO|Thermostat' );
-                                      
-            $actionTmp = array( 'id' => 'setMode',
-                                'label' => 'Set mode',
-                                'type' => 'action',
-                                'subType' => 'select',
-                                'config' => $configList );
-
-            $this->actions[$count] = $actionTmp;                 
-            */
-        } 
-    }  
     class FibaroLock extends FibaroDevice{
 
 
@@ -1084,4 +1001,63 @@
             return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter3/desktop/icones/lock.png';
         }         
     }    
+    class FibaroSensorSmoke extends FibaroSensor{
+
+        private $sensorId, $sensorValue;
+
+        function __construct($_jsonInfo, $_jsonDetail) {
+            
+            parent::__construct($_jsonInfo, $_jsonDetail);
+            $room = FibaroRoom::getById( $this->getRoomId() );
+            if( isset( $room ) ) {
+                $this->sensorId = $room->getSensorTempId();
+                $device = FibaroDevice::getFromId( $this->sensorId );
+                if( $device->getType() == self::FIBARO_TYPE['temperature'] ) {
+                    $values = $device->getValues();
+                    $this->sensorValue = $values[0]['value'];
+                }
+            }
+
+            $this->values[ 3 ] = array( 'name'  => 'temperature',
+                                        'value' => $this->sensorValue,
+                                        'type'  => 'info' );  
+
+            $this->genericTypes[ 'value' ] = 'SMOKE';
+            $this->genericTypes[ 'temperature' ] = 'TEMPERATURE';   
+            
+        }
+
+        public function getTypeName() {
+            return '{{Capteur fumée}}';
+        }  
+
+        public function getTemplate( $info ){
+            $template = parent::getTemplate($info);
+            if(!$template){
+                if( $info == 'value' ) $template = 'alert';   
+                if( $info == 'currentTemp' ) $template = 'tile';                
+            }
+            return $template;
+        }    
+        
+        protected function addCustomActions( $_count ){
+            
+            $count = parent::addCustomActions( $_count );
+            
+            $count++;
+            
+            $configList[ 0 ] = array( 'name' => 'SensorId',
+                                      'value' => $this->sensorId );
+
+            $actionTmp = array( 'id' => 'temperature',
+                                'label' => 'Temperature',
+                                'type' => 'info',
+                                'subType' => 'numeric',
+                                'unite'   => $this->getUnit(),
+                                'config' => $configList );
+
+            $this->actions[$count] = $actionTmp; 
+
+        }         
+    } 
 ?>

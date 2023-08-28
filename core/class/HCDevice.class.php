@@ -30,6 +30,7 @@
             'capteurMouv2' => 'com.fibaro.FGMS001',
             'capteurFuite' => 'com.fibaro.floodSensor',
             'capteurFumee'  => 'com.fibaro.smokeSensor',
+
             'serrure' => 'com.fibaro.securityMonitoring'
         );
 
@@ -94,6 +95,7 @@
                     break;                    
 
                 case self::FIBARO_BASETYPE['capteurFumee'] :
+
                     $device = new FibaroSensorSmoke($_jsonInfo, $_jsonDetail);   
                     break;     
 
@@ -956,6 +958,7 @@
         }         
           
     }       
+
     class FibaroLock extends FibaroDevice{
 
 
@@ -1000,7 +1003,8 @@
             $fibaroServ = FibaroServer::getInstance();
             return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter3/desktop/icones/lock.png';
         }         
-    }    
+    }  
+
     class FibaroSensorSmoke extends FibaroSensor{
 
         private $sensorId, $sensorValue;

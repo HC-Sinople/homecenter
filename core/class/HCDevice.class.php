@@ -29,6 +29,7 @@
             'capteurMouv' => 'com.fibaro.securitySensor',
             'capteurMouv2' => 'com.fibaro.FGMS001',
             'capteurFuite' => 'com.fibaro.floodSensor',
+            'capteurFumee'  => 'com.fibaro.smokeSensor',
             'serrure' => 'com.fibaro.securityMonitoring'
         );
 
@@ -91,6 +92,10 @@
                 case self::FIBARO_BASETYPE['capteurFuite'] :
                     $device = new FibaroSensorWater($_jsonInfo, $_jsonDetail);   
                     break;                    
+
+                case self::FIBARO_BASETYPE['capteurFumee'] :
+                    $device = new FibaroSensorSmoke($_jsonInfo, $_jsonDetail);   
+                    break;     
 
                 case self::FIBARO_BASETYPE['capteurOuv'];
                 case self::FIBARO_BASETYPE['capteurOuv2'] :
@@ -856,7 +861,7 @@
                                         'type'  => 'info' );   
 
             $this->genericTypes[ 'batteryLevel' ] = 'BATTERY';
-            
+            $this->genericTypes[ 'tamper' ] = 'SABOTAGE';
         }
 
         public function getCondition(){
@@ -951,7 +956,6 @@
         }         
           
     }       
-
     class FibaroLock extends FibaroDevice{
 
 
@@ -997,4 +1001,63 @@
             return $fibaroServ->getIcone( $this->getIconeId() ) ?: 'plugins/homecenter3/desktop/icones/lock.png';
         }         
     }    
+    class FibaroSensorSmoke extends FibaroSensor{
+
+        private $sensorId, $sensorValue;
+
+        function __construct($_jsonInfo, $_jsonDetail) {
+            
+            parent::__construct($_jsonInfo, $_jsonDetail);
+            $room = FibaroRoom::getById( $this->getRoomId() );
+            if( isset( $room ) ) {
+                $this->sensorId = $room->getSensorTempId();
+                $device = FibaroDevice::getFromId( $this->sensorId );
+                if( $device->getType() == self::FIBARO_TYPE['temperature'] ) {
+                    $values = $device->getValues();
+                    $this->sensorValue = $values[0]['value'];
+                }
+            }
+
+            $this->values[ 3 ] = array( 'name'  => 'temperature',
+                                        'value' => $this->sensorValue,
+                                        'type'  => 'info' );  
+
+            $this->genericTypes[ 'value' ] = 'SMOKE';
+            $this->genericTypes[ 'temperature' ] = 'TEMPERATURE';   
+            
+        }
+
+        public function getTypeName() {
+            return '{{Capteur fumée}}';
+        }  
+
+        public function getTemplate( $info ){
+            $template = parent::getTemplate($info);
+            if(!$template){
+                if( $info == 'value' ) $template = 'alert';   
+                if( $info == 'currentTemp' ) $template = 'tile';                
+            }
+            return $template;
+        }    
+        
+        protected function addCustomActions( $_count ){
+            
+            $count = parent::addCustomActions( $_count );
+            
+            $count++;
+            
+            $configList[ 0 ] = array( 'name' => 'SensorId',
+                                      'value' => $this->sensorId );
+
+            $actionTmp = array( 'id' => 'temperature',
+                                'label' => 'Temperature',
+                                'type' => 'info',
+                                'subType' => 'numeric',
+                                'unite'   => $this->getUnit(),
+                                'config' => $configList );
+
+            $this->actions[$count] = $actionTmp; 
+
+        }         
+    } 
 ?>

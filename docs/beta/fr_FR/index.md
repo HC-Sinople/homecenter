@@ -31,7 +31,8 @@ Voici la liste des _baseType_ actuellement gérée par le plugin :
 - com.fibaro.securitySensor : Capteur de mouvement,
 - com.fibaro.FGMS001 : Capteur de mouvement,
 - com.fibaro.floodSensor : Capteur d'innodation,
-- com.fibaro.securityMonitoring : Serrure connectée.
+- com.fibaro.securityMonitoring : Serrure connectée,
+- com.fibaro.smokeSensor : Détecteur de fumée.
 
 > Cette information est aussi visible et disponible dans la fenêtre d'ajout de nouveaux équipements FIBARO
 
